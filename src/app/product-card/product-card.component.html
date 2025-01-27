@@ -1,0 +1,27 @@
+<div class="card shadow-sm border-0">
+  <div class="card-header bg-white border-0">
+    <span
+      class="badge rounded-pill px-3 py-1"
+      [ngClass]="product.stock > 0 ? 'bg-success text-white' : 'bg-danger text-white'"
+    >
+      {{ product.stock > 0 ? 'In stock' : 'Out of stock' }}
+    </span>
+  </div>
+  <img [src]="product.thumbnail" class="card-img-top p-3" [alt]="product.title" />
+  <div class="card-body text-center">
+    <h5 class="card-title fw-bold fs-5">{{ product.title }}</h5>
+    <p class="card-text fw-bold text-success-emphasis">
+      {{ product.price | currency: 'EGP' }}
+    </p>
+    <p class="card-text">
+      <span class="text-warning">{{ product.rating | ratingStars }}</span>
+    </p>
+    <button class="btn btn-outline-dark w-70 mx-3" (click)="handleRedirectToDetails(product.id)">View Details</button>
+    <button
+      class="btn btn-outline-dark w-70"
+      [disabled]="product.stock === 0"
+    >
+      Add to Cart
+    </button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container py-5">
+
+  <div class="row">
+    <div class="col-md-5 ">
+      <img [src]="product.thumbnail" class="img-fluid" [alt]="product.title" />
+    </div>
+    <div class="col-md-7">
+      <h1 class="text-success-emphasis">{{ product.title }}</h1>
+      <p class="fs-5 text-warning">{{ product.rating | ratingStars }}</p>
+      <p class="fw-bold fs-5 text-success-emphasis">{{ product.price | currency: 'EGP ' }}</p>
+      <p><strong>Description:</strong> {{ product.description }}</p>
+      <p><strong>Category:</strong> {{ product.category }}</p>
+      <p><strong>Brand:</strong> {{ product.brand }}</p>
+      <button class="btn btn-dark">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
