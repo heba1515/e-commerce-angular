@@ -7,10 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
-  { path: '', component: ProductsComponent, pathMatch: 'full' },
-  { path: 'product-details/:id', component: ProductDetailsComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'cart', component: CartComponent },
-  { path: '**', component: NotFoundComponent },
+  { path: '', component: ProductsComponent, pathMatch: 'full', title: 'Products' },
+  { path: 'product-details/:id', component: ProductDetailsComponent, title: 'Product Details' },
+  { path: 'register', component: RegisterComponent, title: 'Register' },
+  { path: 'login', component: LoginComponent, title: 'Login' },
+  { path: 'cart', component: CartComponent, title: 'Cart' },
+  { path: '**', component: NotFoundComponent, title: 'Not Found' },
 ];

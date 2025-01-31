@@ -1,1 +1,114 @@
-<p>register works!</p>
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 class="text-center mb-4">Register</h3>
+          <form [formGroup]="registerForm" (ngSubmit)="handleSubmitForm()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control"
+              />
+              @if(formControls['name'].invalid && (formControls['name'].touched || submitted)){
+              <div class="text-danger mt-1">
+                @if(formControls['name'].hasError('required')){
+                <small>Name is required.</small>
+                }
+              </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-control"
+              />
+              @if(formControls['email'].invalid && (formControls['email'].touched || submitted)){
+              <div class="text-danger mt-1">
+                @if(formControls['email'].hasError('required')){
+                <small>Email is required.</small>
+                }
+                @if(formControls['email'].hasError('pattern')){
+                <small>Enter a valid email(example&#64;gmail.com).</small>
+                }
+              </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label for="username" class="form-label">User Name</label>
+              <input
+                type="text"
+                id="username"
+                formControlName="username"
+                class="form-control"
+              />
+              @if(formControls['username'].invalid && (formControls['username'].touched || submitted)){
+              <div class="text-danger mt-1">
+                @if(formControls['username'].hasError('required')){
+                <small>Username is required.</small>
+                }
+                @if(formControls['username'].hasError('pattern')){
+                <small>Username cannot contain spaces.</small>
+                }
+              </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                formControlName="password"
+                class="form-control"
+              />
+              @if(formControls['password'].invalid && (formControls['password'].touched || submitted)){
+              <div class="text-danger mt-1">
+                @if(formControls['password'].hasError('required')){
+                <small>Password is required.</small>
+                }
+                @if(formControls['password'].hasError('pattern')){
+                <small>Password must have at least 8 characters, including one uppercase, one lowercase, one digit, and one special character.</small>
+                }
+              </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                class="form-control"
+              />
+              @if(formControls['confirmPassword'].invalid && (formControls['confirmPassword'].touched || submitted)){
+              <div class="text-danger mt-1">
+                @if(formControls['confirmPassword'].hasError('required')){
+                <small>Confirm password is required.</small>
+                }
+                @if(formControls['confirmPassword'].hasError('mismatch')){
+                <small>Passwords do not match.</small>
+                }
+              </div>
+              }
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+          </form>
+          <p class="text-center mt-3">
+            Already have account? <a routerLink="/login" class="text-primary">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
