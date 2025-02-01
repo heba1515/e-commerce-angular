@@ -11,7 +11,13 @@
       <p><strong>Description:</strong> {{ product.description }}</p>
       <p><strong>Category:</strong> {{ product.category }}</p>
       <p><strong>Brand:</strong> {{ product.brand }}</p>
-      <button class="btn btn-dark">Add to Cart</button>
+      <button
+        class="btn btn-dark"
+        [disabled]="product.stock === 0"
+        (click)="addToCart()"
+      >
+      Add to Cart
+    </button>
     </div>
   </div>
 

@@ -20,6 +20,7 @@
     <button
       class="btn btn-outline-dark w-70"
       [disabled]="product.stock === 0"
+      (click)="addToCart()"
     >
       Add to Cart
     </button>
