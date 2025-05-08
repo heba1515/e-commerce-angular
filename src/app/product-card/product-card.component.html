@@ -1,4 +1,4 @@
-<div class="card shadow-sm border-0">
+<div class="card shadow-lg border-0">
   <div class="card-header bg-white border-0">
     <span
       class="badge rounded-pill px-3 py-1"
@@ -18,7 +18,7 @@
     </p>
     <button class="btn btn-outline-dark w-70 mx-3" (click)="handleRedirectToDetails(product.id)">View Details</button>
     <button
-      class="btn btn-outline-dark w-70"
+      class="btn btn-dark w-70"
       [disabled]="product.stock === 0"
       (click)="addToCart()"
     >
